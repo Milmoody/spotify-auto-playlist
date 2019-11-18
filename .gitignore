@@ -1,0 +1,8 @@
+node_modules
+dist/*.js
+.DS_Store
+npm-debug.log
+.env
+package-lock.json
+.vscode
+server/oauth-config/auth-keys.js
