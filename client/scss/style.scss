@@ -1,0 +1,62 @@
+// font-family: 'Source Sans Pro', sans-serif;
+// font-family: 'Slabo 27px', serif;
+// font-family: 'Noto Sans JP', sans-serif;
+// font-family: 'Arimo', sans-serif;
+// font-family: 'Nunito Sans', sans-serif;
+// font-family: 'Dosis', sans-serif;
+
+
+$curve-borders: 5px;
+$primary-black: rgb(77, 77, 77);
+$secondary-black: lighten($primary-black, 10%);
+$light-grey: lighten($primary-black, 60%);
+$super-light-grey: rgb(201, 69, 69);
+$btn-color: rgb(115, 216, 203);
+
+
+// Dumble colors
+$primary-col: rgb(138, 79, 187);
+$primary-text-col: rgb(40, 41, 43);
+
+$secondary-col: rgb(138, 127, 167);
+$secondary-text-col: rgb(233, 232, 235);
+$accent-col: #ccb220;
+$light-accent-col: #eee2d91c;
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+#playlist-div{
+  display: flex;
+  justify-content: center;
+}
+
+.playlist-card {
+  margin: 5px;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  // align-content: center;
+  justify-content: space-around; 
+  // justify-items: center;
+  text-align: center;
+  color: $primary-text-col;
+  border: 1px solid $primary-col;
+  font-family: 'Dosis', sans-serif;
+}
+
+.auto-playlist-button {
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: $secondary-col;
+  color: $secondary-text-col;
+  font-weight: 600;
+  width: 50%;
+  align-self: center;
+}
+
+.playlist-card-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
