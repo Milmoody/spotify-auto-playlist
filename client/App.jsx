@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Wrapper from './components/Wrapper.jsx';
+import Home from './components/Home.jsx';
 import './scss/style.scss';
 
 class App extends Component {
@@ -32,7 +32,7 @@ class App extends Component {
 
   render() {
     return(
-      < Wrapper username={this.state.username} likedSongs={this.state.likedSongs} playlists={this.state.playlists} userID={this.state.userID}/>
+      < Home username={this.state.username} likedSongs={this.state.likedSongs} playlists={this.state.playlists} userID={this.state.userID}/>
     )
   }
 }
