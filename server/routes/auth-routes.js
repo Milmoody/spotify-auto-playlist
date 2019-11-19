@@ -1,24 +1,36 @@
-const router = require('express').Router();
+// const router = require('express').Router();
+const express = require('express');
+const app = express();
+
 const passport = require('passport');
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();  
+})
+
 // OAuth login
-router.get('/login', (req, res) => {
+app.get('/login', (req, res) => {
   res.send('hey you gotta login');
 });
 
-router.get('/logout', (req, res) => {
+app.get('/logout', (req, res) => {
   // handle with passport
   req.logout();
   res.redirect('/')
 });
 
-router.get('/google', passport.authenticate('google', {
-  scope: ['profile']
-}));
+app.get('/spotify', passport.authenticate('spotify', {
+  scope: ['playlist-modify-private']
+}), (req, res) => {
+  res.status(418).send('Error in passport Spotify auth route')
+});
 
-// callback route for google to redirect to
-router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-  // res.send(req.user);
-  res.redirect('/profile')
+// callback route for spotify to redirect to
+app.get('/spotify/callback', passport.authenticate('spotify'), (req, res) => {
+  res.status(418).send(res.locals.profile);
+  // res.redirect('/profile')
 })
 
-module.exports = router;
+module.exports = app;
