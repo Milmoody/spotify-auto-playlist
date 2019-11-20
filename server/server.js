@@ -47,12 +47,6 @@ app.use((req, res, next) => {
 app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
 
-// // TEMPORARY OAUTH TEST
-// // view engine
-// app.set('view engine', 'ejs');
-// app.get('/', (req, res) => {
-//   res.render('./../client/auth-test.ejs');
-// });
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../index.html'));
